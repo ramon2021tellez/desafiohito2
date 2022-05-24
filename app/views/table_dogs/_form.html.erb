@@ -1,0 +1,47 @@
+<%= form_with(model: table_dog) do |form| %>
+  <% if table_dog.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(table_dog.errors.count, "error") %> prohibited this table_dog from being saved:</h2>
+
+      <ul>
+        <% table_dog.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :id_dog, style: "display: block" %>
+    <%= form.number_field :id_dog %>
+  </div>
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div>
+    <%= form.label :raza, style: "display: block" %>
+    <%= form.text_field :raza %>
+  </div>
+
+  <div>
+    <%= form.label :peso, style: "display: block" %>
+    <%= form.number_field :peso %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_nac, style: "display: block" %>
+    <%= form.date_field :fecha_nac %>
+  </div>
+
+  <div>
+    <%= form.label :vacunas, style: "display: block" %>
+    <%= form.text_field :vacunas %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

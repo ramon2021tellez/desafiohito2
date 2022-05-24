@@ -1,0 +1,2 @@
+class TableDog < ApplicationRecord
+end
