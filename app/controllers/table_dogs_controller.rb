@@ -3,7 +3,7 @@ class TableDogsController < ApplicationController
 
   # GET /table_dogs or /table_dogs.json
   def index
-    @table_dogs = TableDog.all
+    @table_dogs = TableDog.order(:id_dog).page(params[:page])
   end
 
   # GET /table_dogs/1 or /table_dogs/1.json
